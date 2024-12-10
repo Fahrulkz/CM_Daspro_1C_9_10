@@ -66,7 +66,29 @@ public class CM_Daspro_1C_9_10 {
     }
 
     static void tambahItem(){
-
+        Scanner sc = new Scanner(System.in);
+        String kategori;
+        String itembaru;
+        int stokawal;
+        System.out.println("==== TAMBAH ITEM BARU ====");
+        System.out.print("Masukkan nama item baru: ");
+        itembaru = sc.nextLine();
+        System.out.print("Masukkan kategori item baru: ");
+        kategori = sc.nextLine();
+        System.out.print("Masukkan jumlah stock awal: ");
+        stokawal= sc.nextInt();
+    
+        for (int i = 0; i < inventori.length; i++) {
+            for (int j = 0; j < inventori[i].length; j++) {
+                if (inventori[i][j]==null) {
+                    inventori[i][0] =itembaru;
+                    inventori[i][1] =kategori;
+                    stok[i] = stokawal;
+                    System.out.println("Item baru berhasil ditambahkan " + itembaru + " (" + kategori + ") " +"- Stok: " + stokawal);
+                    listMenu();
+                }
+            }
+        }
     }
 
     static void tambahStock(){

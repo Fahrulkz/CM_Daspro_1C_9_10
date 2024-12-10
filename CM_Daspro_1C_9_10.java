@@ -14,7 +14,7 @@ public class CM_Daspro_1C_9_10 {
         stok[2] = 8;
     }
     public static void main(String[] args) {
-
+        listMenu();
     }
 
     static void listMenu(){
@@ -52,7 +52,17 @@ public class CM_Daspro_1C_9_10 {
     }
 
     static void tampilkanData() {
-
+        System.out.println("\n===== Daftar Inventori: =====");
+        System.out.printf("%-4s %-20s %-15s %-10s\n", "No", "Nama Item", "Kategori", "Stok");
+        System.out.println("-----------------------------------------------");
+        for (int i = 0; i < inventori.length; i++) {
+            for (int j = 0; j < 1; j++) {
+                if (inventori[i][0]==null) {
+                    break;
+                }
+                System.out.printf("%-4s %-20s %-15s %-10s\n", i+1, inventori[i][0], inventori[i][1], stok[i]);
+            }
+        }    
     }
 
     static void tambahItem(){

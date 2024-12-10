@@ -92,6 +92,17 @@ public class CM_Daspro_1C_9_10 {
     }
 
     static void tambahStock(){
-        
+        Scanner sc = new Scanner(System.in);
+        int nomor;
+        int tambahstok;
+        System.out.println("==== TAMBAH STOCK ====");
+        System.out.print("Masukkan nomor item: ");
+        nomor = sc.nextInt();
+        System.out.print("Masukkan jumlah stock yang ingin ditambahkan: ");
+        tambahstok = sc.nextInt();
+        if (inventori[nomor-1][0]!=null||stok[nomor-1]>0) {
+            stok[nomor-1] += tambahstok;
+        }
+        System.out.print("Stock " + inventori[nomor-1][0] + " berhasil ditambah." + " Stok sekarang: " + stok[nomor-1]);
     }
 }

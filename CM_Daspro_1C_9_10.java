@@ -65,11 +65,13 @@ public class CM_Daspro_1C_9_10 {
         }    
     }
 
+    //fungsi untuk menambah item
     static void tambahItem(){
         Scanner sc = new Scanner(System.in);
         String kategori;
         String itembaru;
         int stokawal;
+        //menginput nama item baru, kategori, dan jumlah stocknya
         System.out.println("==== TAMBAH ITEM BARU ====");
         System.out.print("Masukkan nama item baru: ");
         itembaru = sc.nextLine();
@@ -77,7 +79,7 @@ public class CM_Daspro_1C_9_10 {
         kategori = sc.nextLine();
         System.out.print("Masukkan jumlah stock awal: ");
         stokawal= sc.nextInt();
-    
+    //kondisi untuk menambahkan item baru ke array inventori
         for (int i = 0; i < inventori.length; i++) {
             for (int j = 0; j < inventori[i].length; j++) {
                 if (inventori[i][j]==null) {
@@ -91,15 +93,18 @@ public class CM_Daspro_1C_9_10 {
         }
     }
 
+    //fungsi untuk menambah stock
     static void tambahStock(){
         Scanner sc = new Scanner(System.in);
         int nomor;
         int tambahstok;
+        //input nomor ke item yang akan ditambah stocknya
         System.out.println("==== TAMBAH STOCK ====");
         System.out.print("Masukkan nomor item: ");
         nomor = sc.nextInt();
         System.out.print("Masukkan jumlah stock yang ingin ditambahkan: ");
         tambahstok = sc.nextInt();
+        //kondisi untuk menambahkan stock ke array inventori
         if (inventori[nomor-1][0]!=null||stok[nomor-1]>0) {
             stok[nomor-1] += tambahstok;
         }
